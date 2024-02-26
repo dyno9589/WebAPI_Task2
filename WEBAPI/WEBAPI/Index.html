@@ -1,0 +1,141 @@
+﻿<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee CRUD</title>
+
+    <script>
+
+        // Update the base URL with your Web API endpoint
+        const baseUrl = 'https://localhost:44341/api/employees';
+
+        // Function to fetch and display all employees
+        async function displayEmployees() {
+            const response = await fetch(`${baseUrl}`);
+            const employees = await response.json();
+
+            const employeeList = document.getElementById('employeeList');
+            employeeList.innerHTML = '';
+
+            employees.forEach(employee => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${employee.FirstName} ${employee.LastName} (ID: ${employee.ID})`;
+                employeeList.appendChild(listItem);
+            });
+        }
+
+        // Function to add a new employee
+        async function addEmployee() {
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const gender = document.getElementById('gender').value;
+            const salary = document.getElementById('salary').value;
+
+            const response = await fetch(`${baseUrl}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    FirstName: firstName,
+                    LastName: lastName,
+                    Gender: gender,
+                    Salary: salary,
+                }),
+            });
+
+            await displayEmployees();
+        }
+
+        // Function to update an existing employee
+        async function updateEmployee() {
+            const id = document.getElementById('updateId').value;
+            const firstName = document.getElementById('updateFirstName').value;
+            const lastName = document.getElementById('updateLastName').value;
+            const gender = document.getElementById('updateGender').value;
+            const salary = document.getElementById('updateSalary').value;
+
+            const response = await fetch(`${baseUrl}/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    FirstName: firstName,
+                    LastName: lastName,
+                    Gender: gender,
+                    Salary: salary,
+                }),
+            });
+
+            await displayEmployees();
+        }
+
+        // Function to delete an employee
+        async function deleteEmployee() {
+            const id = document.getElementById('deleteId').value;
+
+            const response = await fetch(`${baseUrl}/${id}`, {
+                method: 'DELETE',
+            });
+
+            await displayEmployees();
+        }
+
+        // Initial display of employees when the page loads
+        displayEmployees();
+
+
+
+    </script>
+
+</head>
+<body>
+    <h1>Employee CRUD Operations</h1>-->
+
+    <!-- Display Employees -->
+    <!--<h2>Employee List</h2>
+    <ul id="employeeList"></ul>-->
+
+    <!-- Add Employee Form -->
+    <!--<h2>Add Employee</h2>
+    <form id="addEmployeeForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" required>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" required>
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" required>
+        <label for="salary">Salary:</label>
+        <input type="number" id="salary" required>
+        <button type="button" onclick="addEmployee()">Add Employee</button>
+    </form>-->
+
+    <!-- Update Employee Form -->
+    <!--<h2>Update Employee</h2>
+    <form id="updateEmployeeForm">
+        <label for="updateId">Employee ID to Update:</label>
+        <input type="number" id="updateId" required>
+        <label for="updateFirstName">First Name:</label>
+        <input type="text" id="updateFirstName" required>
+        <label for="updateLastName">Last Name:</label>
+        <input type="text" id="updateLastName" required>
+        <label for="updateGender">Gender:</label>
+        <input type="text" id="updateGender" required>
+        <label for="updateSalary">Salary:</label>
+        <input type="number" id="updateSalary" required>
+        <button type="button" onclick="updateEmployee()">Update Employee</button>
+    </form>-->
+
+    <!-- Delete Employee Form -->
+    <!--<h2>Delete Employee</h2>
+    <form id="deleteEmployeeForm">
+        <label for="deleteId">Employee ID to Delete:</label>
+        <input type="number" id="deleteId" required>
+        <button type="button" onclick="deleteEmployee()">Delete Employee</button>
+    </form>
+
+    <script src="scripts.js"></script>
+</body>
+</html>-->
